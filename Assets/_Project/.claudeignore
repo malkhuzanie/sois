@@ -1,0 +1,6 @@
+*.meta
+*.unity
+# 01_Physics/Scripts/Deformation/
+# 03_Simulation/Scenes/
+# 03_Simulation/Scripts/
+MassSpring*
