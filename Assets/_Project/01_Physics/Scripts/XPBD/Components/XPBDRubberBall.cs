@@ -6,6 +6,7 @@ using _Project._01_Physics.Scripts.XPBD.Materials;
 using _Project._01_Physics.Scripts.XPBD.Constraints;
 using _Project._01_Physics.Scripts.XPBD.Utilities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _Project._01_Physics.Scripts.XPBD.Components
 {
@@ -165,11 +166,8 @@ namespace _Project._01_Physics.Scripts.XPBD.Components
                 allParticleIndices.Add(i);
             }
 
-            Vector3 originalCenter = Vector3.zero;
-            foreach (var vertex in originalVertices)
-            {
-                originalCenter += vertex;
-            }
+            var originalCenter = originalVertices
+                .Aggregate(Vector3.zero, (current, vertex) => current + vertex);
 
             originalCenter /= originalVertices.Length;
 
@@ -187,10 +185,6 @@ namespace _Project._01_Physics.Scripts.XPBD.Components
                     material.Friction * 1.5f // Static friction (50% higher)
                 );
                 
-                // var groundConstraint = new FinalGroundConstraint(
-                //     groundY, material.Restitution, material.Friction);
-                // var groundConstraint = new EnhancedXPBDGroundConstraint(
-                //     groundY, material.Restitution, material.Friction, material.Friction * 0.8f);
                 solver.AddConstraint(groundConstraint);
             }
 

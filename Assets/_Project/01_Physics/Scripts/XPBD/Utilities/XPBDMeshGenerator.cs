@@ -86,7 +86,7 @@ namespace _Project._01_Physics.Scripts.XPBD.Utilities
                 new int[]{4, 9, 5}, new int[]{2, 4, 11}, new int[]{6, 2, 10}, new int[]{8, 6, 7}, new int[]{9, 8, 1}
             };
             
-            foreach (var face in faces)
+            foreach (int[] face in faces)
             {
                 triangles.AddRange(face);
             }
@@ -108,10 +108,10 @@ namespace _Project._01_Physics.Scripts.XPBD.Utilities
                 int c = GetMidpoint(v2, v0, vertices, midpointCache, radius);
                 
                 // Create 4 new triangles
-                newTriangles.AddRange(new int[] { v0, a, c });
-                newTriangles.AddRange(new int[] { v1, b, a });
-                newTriangles.AddRange(new int[] { v2, c, b });
-                newTriangles.AddRange(new int[] { a, b, c });
+                newTriangles.AddRange(new[] { v0, a, c });
+                newTriangles.AddRange(new[] { v1, b, a });
+                newTriangles.AddRange(new[] { v2, c, b });
+                newTriangles.AddRange(new[] { a, b, c });
             }
             
             triangles.Clear();

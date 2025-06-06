@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Project._01_Physics.Scripts.XPBD.Core;
 using UnityEngine;
 
@@ -14,12 +15,12 @@ namespace _Project._01_Physics.Scripts.XPBD.Constraints
     /// </summary>
     public class StableGroundConstraintV3 : XPBDConstraint
     {
-        public float GroundY = 0.0f;
-        public float Restitution = 0.7f;
-        public float DynamicFriction = 0.6f;
-        public float StaticFriction = 0.9f;
-        public float RestVelocityThreshold = 0.05f; // Below this speed, consider at rest
-        public float PositionStabilization = 0.95f; // How much to correct position drift
+        public readonly float GroundY = 0.0f;
+        public readonly float Restitution = 0.7f;
+        public readonly float DynamicFriction = 0.6f;
+        public readonly float StaticFriction = 0.9f;
+        public const float RestVelocityThreshold = 0.05f; // Below this speed, consider at rest
+        public readonly float PositionStabilization = 0.95f; // How much to correct position drift
         
         // Per-particle state
         private Dictionary<int, ParticleGroundState> particleStates = new Dictionary<int, ParticleGroundState>();
@@ -195,24 +196,19 @@ namespace _Project._01_Physics.Scripts.XPBD.Constraints
         
         public override float EvaluateConstraint(List<XPBDParticle> particles)
         {
-            float maxPenetration = 0.0f;
-            foreach (var particle in particles)
-            {
-                if (particle.PredictedPosition.y < GroundY)
-                {
-                    maxPenetration = Mathf.Max(maxPenetration, GroundY - particle.PredictedPosition.y);
-                }
-            }
-            return maxPenetration;
+            return particles
+                .Where(particle => particle.PredictedPosition.y < GroundY)
+                .Aggregate(0.0f, (current, particle) => Mathf.Max(current, GroundY - particle.PredictedPosition.y));
         }
         
         // Public method to check if all particles are resting
         public bool AreAllParticlesResting()
         {
-            foreach (var state in particleStates.Values)
+            if (particleStates.Values.Any(state => !state.IsResting))
             {
-                if (!state.IsResting) return false;
+                return false;
             }
+
             return particleStates.Count > 0;
         }
     }

@@ -66,7 +66,7 @@ namespace _Project._01_Physics.Scripts.XPBD.Core
             
             // Verlet integration: x' = 2x - x* + a*dt²
             Vector3 velocity = Position - PreviousPosition;
-            PredictedPosition = Position + velocity + externalAcceleration * deltaTime * deltaTime;
+            PredictedPosition = Position + velocity + externalAcceleration * (deltaTime * deltaTime);
         }
         
         /// <summary>
@@ -85,7 +85,10 @@ namespace _Project._01_Physics.Scripts.XPBD.Core
         /// </summary>
         public Vector3 GetVelocity(float deltaTime)
         {
-            if (deltaTime <= 0.0f) return Vector3.zero;
+            if (deltaTime <= 0.0f)
+            {
+                return Vector3.zero;
+            }
             return (Position - PreviousPosition) / deltaTime;
         }
         
@@ -94,7 +97,10 @@ namespace _Project._01_Physics.Scripts.XPBD.Core
         /// </summary>
         public void ApplyDamping(float damping)
         {
-            if (IsFixed) return;
+            if (IsFixed)
+            {
+                return;
+            }
             
             Vector3 velocity = Position - PreviousPosition;
             PreviousPosition = Position - velocity * damping;
@@ -105,7 +111,10 @@ namespace _Project._01_Physics.Scripts.XPBD.Core
         /// </summary>
         public void ApplyImpulse(Vector3 impulse, float deltaTime)
         {
-            if (IsFixed || InverseMass <= 0.0f) return;
+            if (IsFixed || InverseMass <= 0.0f)
+            {
+                return;
+            }
             
             Vector3 velocityChange = impulse * InverseMass;
             PreviousPosition -= velocityChange * deltaTime;
