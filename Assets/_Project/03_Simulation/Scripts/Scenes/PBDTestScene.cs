@@ -1,8 +1,9 @@
 // Assets/_Project/03_Simulation/Scripts/Scenes/PBDTestScene.cs
 
+using _Project._01_Physics.Scripts.PBD_V1;
+using _Project._01_Physics.Scripts.PBD_V1.Materials;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using _Project._01_Physics.Scripts.PBD;
 
 public class PBDTestScene : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class PBDTestScene : MonoBehaviour
 
         // Initialize with super bouncy material
         softBody.Initialize(superBouncyMaterial);
-        softBody.SetRubberBehavior(2.0f); // 2x bounce multiplier
+        // softBody.SetRubberBehavior(2.0f); // 2x bounce multiplier
 
         Debug.Log($"SUPER BOUNCY rubber ball created");
 
