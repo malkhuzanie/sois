@@ -129,6 +129,17 @@ GameObject:
   m_Component:
   - component: {fileID: 615051171}
   - component: {fileID: 615051172}
+  - component: {fileID: 615051173}
+  - component: {fileID: 615051174}
+  - component: {fileID: 615051175}
+  - component: {fileID: 615051176}
+  - component: {fileID: 615051177}
+  - component: {fileID: 615051178}
+  - component: {fileID: 615051179}
+  - component: {fileID: 615051180}
+  - component: {fileID: 615051181}
+  - component: {fileID: 615051182}
+  - component: {fileID: 615051183}
   m_Layer: 0
   m_Name: TestController
   m_TagString: Untagged
@@ -144,14 +155,159 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615051170}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.49812597, w: 0.8671047}
   m_LocalPosition: {x: 0.4615, y: 0, z: 2.76378}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 59.752}
 --- !u!114 &615051172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c18a9f6bc64593b03c78e2a4550adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSetup: 1
+--- !u!114 &615051173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79233406703148808563adf187ef7b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballStartPosition: {x: 0, y: 5, z: 0}
+  ballSize: 1.5
+  sphereResolution: 12
+  createGround: 1
+--- !u!114 &615051174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b27df195114f19b67ea29dddb40db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 0
+  ballStartPosition: {x: 0, y: 5, z: 0}
+  ballSize: 1.5
+--- !u!114 &615051175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3615adf240b4dbd84a19e84842fb1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &615051176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e140b6676b4d95b46f7214992ccdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballStartPosition: {x: 0, y: 8, z: 0}
+  ballSize: 1.5
+  sphereResolution: 8
+  globalStiffness: 0.95
+  constraintIterations: 8
+  materialStiffness: 4000
+  rubberBall: {fileID: 0}
+  softBody: {fileID: 0}
+--- !u!114 &615051177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f2054f99994e21b373a6acc982b7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createTestBall: 1
+  ballStartPosition: {x: 0, y: 8, z: 0}
+  ballSize: 1.5
+  ballResolution: 8
+--- !u!114 &615051178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be06d48752f4a179fbb53bdbb53468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballStartPosition: {x: 0, y: 8, z: 0}
+  ballSize: 1
+  sphereResolution: 16
+  glassColor: {r: 0.8, g: 0.9, b: 1, a: 0.6}
+  fracturedGlassColor: {r: 1, g: 0.8, b: 0.8, a: 0.8}
+  fractureThreshold: 5
+  impactSensitivity: 2
+  enableFragments: 1
+  autoReset: 0
+  resetDelay: 10
+--- !u!114 &615051179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cd8973bbe6496e896c9d1251dba6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoSpawnObjects: 1
+  spawnInterval: 3
+  maxObjectsInScene: 8
+  enableManualSpawning: 1
+  spawnAreaCenter: {x: 0, y: 8, z: 0}
+  spawnAreaSize: {x: 6, y: 2, z: 6}
+  minSpawnHeight: 6
+  maxSpawnHeight: 12
+  spawnGlassBalls: 1
+  spawnCrystalGlass: 1
+  spawnCeramicVases: 1
+  spawnIceCubes: 1
+  spawnTemperedGlass: 1
+  enableParticleEffects: 1
+  enableSoundEffects: 0
+  enableSlowMotion: 0
+  slowMotionScale: 0.3
+  enableResetTimer: 1
+  resetInterval: 60
+--- !u!114 &615051180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,10 +316,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 615051170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c18a9f6bc64593b03c78e2a4550adb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0db3fa5dd50744538458b0c45a4721e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoSetup: 1
+  createTestBalls: 1
+  createGround: 1
+  ballSpawnPosition: {x: 0, y: 5, z: 0}
+  ballRadius: 0.5
+  meshSubdivisions: 2
+  createMultipleBalls: 0
+  numberOfBalls: 3
+  spawnAreaSize: {x: 2, y: 2, z: 2}
+--- !u!114 &615051181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe4463166164f19ad0e4c8c5ecbb6d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createTestBall: 1
+  createGround: 1
+  ballSpawnPosition: {x: 0, y: 5, z: 0}
+  ballRadius: 0.5
+  meshSubdivisions: 2
+  testBall: {fileID: 0}
+--- !u!114 &615051182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898a409826c64555bea2e6c66baab637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createTestBall: 1
+  createGround: 1
+  ballSpawnPosition: {x: 0, y: 6, z: 0}
+  ballRadius: 0.5
+  meshSubdivisions: 2
+  testBall: {fileID: 0}
+--- !u!114 &615051183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615051170}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2ef3031f094b4fb05832f08d0c8e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createTestBall: 1
+  createGround: 1
+  ballSpawnPosition: {x: 0, y: 8, z: 0}
+  ballRadius: 0.5
+  meshSubdivisions: 2
+  testBall: {fileID: 0}
 --- !u!1 &1703775192
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1703775194}
   - component: {fileID: 1703775193}
+  - component: {fileID: 1703775195}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -261,6 +479,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1703775195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703775192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1973819996
 GameObject:
   m_ObjectHideFlags: 0
